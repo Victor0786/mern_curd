@@ -70,7 +70,6 @@ const User = () => {
                     type="button"
                     className="btn btn-danger"
                   >
-                    
                     <i className="fa-solid fa-trash"></i>
                   </button>
                 </td>
