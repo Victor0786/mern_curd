@@ -12,6 +12,7 @@ const AddUser = () => {
         address: "",
     };
 
+
     const [user, setUser] = useState(users)
     const navigate = useNavigate();
 
@@ -36,17 +37,10 @@ const AddUser = () => {
     console.error("Error adding user:", error);
 }
 
-        // await axios.post("http://localhost:8000/api/user", user)
-        //     .then((response) => {
-        //         console.log("its done ")
-        //         navigate("/");
-        //     })
-        //     .catch((error) => {
-        //     console.log(error)
-        // })
+    
     }
 
-    
+
     return (
       <>
             <div className='addUser'>
