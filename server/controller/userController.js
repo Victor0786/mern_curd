@@ -13,9 +13,8 @@ export const create = async (req, res) => {
         }
 
         const savedData = await newUser.save();
-        res.status(200).json(savedData);
-            
-
+        // res.status(200).json(savedData);
+         res.status(200).json({message: "User Created Successfully" });
 
     
     } catch (error) {
@@ -54,10 +53,13 @@ export const update = async (req, res) => {
         const userExist = await User.findById(id);
         if (!userExist) {
              return res.status(404).json({ message: "No users found" });
-        }        
+        }
 
         const updatedData = await User.findByIdAndUpdate(id, req.body, { new: true });
-        res.status(200).json(updatedData);
+
+        // res.status(200).json(updatedData);
+        res.status(200).json({message: "User Updated Successfully" });
+
     } catch (error) {
          res.status(500).json({ errormessage: error.message });
     }
@@ -75,4 +77,4 @@ export const deleteUser = async (req, res) => {
     } catch (error) {
          res.status(500).json({ errormessage: error.message });
     }
- }
+}

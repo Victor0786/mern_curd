@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./User.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 // import toast from "react-hot-toast";
 
 const User = () => {
@@ -19,18 +20,18 @@ const User = () => {
     fetchData();
   }, []);
 
-//   const deleteUser = async (userId) => {
-//     await axios
-//       .delete(`http://localhost:8000/api/delete/user/${userId}`)
-//       .then((response) => {
-//         setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
-//         // toast.succe
-//         //  });
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
+  const deleteUser = async (userId) => {
+    await axios
+      .delete(`http://localhost:8000/api/delete/users/${userId}`)
+      .then((response) => {
+        setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
+        // toast.succe
+        //  });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="userTable">
@@ -66,7 +67,7 @@ const User = () => {
                   </Link>
 
                   <button
-                    // onClick={() => deleteUser(user._id)}
+                    onClick={() => deleteUser(user._id)}
                     type="button"
                     className="btn btn-danger"
                   >
